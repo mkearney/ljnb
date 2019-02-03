@@ -21,6 +21,20 @@
 #'
 #' @export
 launch_jupyter <- function(path = ".") {
+
+  ## if null or empty, assume current directory
+  if (length(path) == 0 || identical("", path)) {
+    path <- "."
+  }
+  ## validate
+  stopifnot(
+    length(path) == 1L,
+    is.character(path),
+    fml::dir_exists(path)
+  )
+  ## expand path
+  path <- fml::pe(path)
+
   ## check OS
   if (!is_unix()) {
     stop("Currently launch_jupyter only works on unix machines",
