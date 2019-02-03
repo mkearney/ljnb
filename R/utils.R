@@ -61,3 +61,25 @@ anaconda_find <- function() {
   an <- an[order(nchar(an), decreasing = TRUE)]
   an[1]
 }
+
+is_version <- function(...) {
+  x <- paste0(c(..., " --version"), collapse = "")
+  sh <- tryCatch(
+    system(x, intern = TRUE),
+    error = function(e) ""
+  )
+  length(sh) == 1 && grepl("^[[:digit:].]+$", sh)
+}
+
+check_ir_kernal <- function() {
+  if (is_anaconda()) {
+    x <- paste0(anaconda_find(), "/bin/jupyter kernelspec")
+  } else {
+    x <- "jupyter kernelspec"
+  }
+  if (is_version(x)) {
+    return(invisible(TRUE))
+  }
+  IRkernel::installspec()
+  invisible(TRUE)
+}
