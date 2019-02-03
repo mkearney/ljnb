@@ -1,0 +1,21 @@
+Package: ljnb
+Title: Launch Jupyter Notebooks
+Version: 0.0.1
+Authors@R: c(
+    person("Michael W.", "Kearney", ,
+    email = "kearneymw@missouri.edu", role = c("aut", "cre"),
+    comment = c(ORCID = "0000-0002-0730-4694"))
+    )
+Description: Lanches a Jupyter environment in the local browser from the 
+    Anaconda distribution.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+Imports: 
+    fml,
+    dapr
+Remotes: 
+    mkearney/fml
+URL: https://github.com/mkearney/ljnb
+BugReports: https://github.com/mkearney/ljnb/issues

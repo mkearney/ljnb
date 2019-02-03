@@ -1,0 +1,36 @@
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# ljnb
+
+<!--[![Build status](https://travis-ci.org/mkearney/ljnb.svg?branch=master)](https://travis-ci.org/mkearney/ljnb)
+[![CRAN status](https://www.r-pkg.org/badges/version/ljnb)](https://cran.r-project.org/package=ljnb)
+[![Coverage Status](https://codecov.io/gh/mkearney/ljnb/branch/master/graph/badge.svg)](https://codecov.io/gh/mkearney/ljnb?branch=master)
+
+#![Downloads](https://cranlogs.r-pkg.org/badges/ljnb)
+#![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/ljnb)-->
+
+[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+
+An R package for launching Jypter notebooks
+
+## Installation
+
+Install the development version from Github with:
+
+``` r
+## install remotes pkg if not already
+if (!requireNamespace("remotes")) {
+  install.packages("remotes")
+}
+
+## install from github
+remotes::install_github("mkearney/ljnb")
+```
+
+## Use
+
+``` r
+## open jupyter environment at '~/my_data_science_project'
+launch_jupyter("~/my_data_science_project")
+```
